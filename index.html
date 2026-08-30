@@ -3,131 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Mr. WISH 希望好茶 公館水源店・士林承德店 線上點餐與外送連結">
+<meta name="description" content="Mr. WISH 希望好茶 公館水源店・士林承德店 線上點餐、外送連結與免運距離">
 <title>Mr. WISH 希望好茶 點餐連結</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
   :root{
-    --bg:#F2F5EC;
-    --card:#FFFFFF;
-    --ink:#1D2A1B;
-    --ink-2:#5B6B58;
-    --line:#D9E1D0;
+    --bg:#F6F2E4;
+    --bg-2:#EDEAD6;
+    --card:#FFFDF7;
+    --ink:#22301C;
+    --ink-2:#6A7560;
+    --line:#E0DECB;
     --tea:#5B7828;
-    --tea-deep:#43591D;
-    --fruit:#E7863A;
+    --tea-deep:#3F5A1C;
+    --tea-soft:#E4EBD2;
+    --nidin:#E9A23B;
+    --nidin-soft:#FBEFD8;
     --panda:#D70F64;
     --uber:#06C167;
-    --nidin:#F5A623;
     --focus:#5B7828;
+    --shadow:0 10px 30px rgba(74,84,40,.10);
     color-scheme:light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#131A12;
-      --card:#1C261B;
-      --ink:#EEF3E8;
-      --ink-2:#A3B39D;
-      --line:#2E3C2C;
-      --tea:#A8C463;
-      --tea-deep:#C9DC8F;
-      --fruit:#F2A15E;
-      --focus:#A8C463;
+      --bg:#141910; --bg-2:#1A2114; --card:#1F2818;
+      --ink:#EEF2E4; --ink-2:#A6B296; --line:#33402A;
+      --tea:#A9C766; --tea-deep:#C9DE95; --tea-soft:#28351C;
+      --nidin:#F0B45A; --nidin-soft:#3A2F17;
+      --focus:#A9C766; --shadow:0 10px 30px rgba(0,0,0,.35);
       color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#131A12;
-    --card:#1C261B;
-    --ink:#EEF3E8;
-    --ink-2:#A3B39D;
-    --line:#2E3C2C;
-    --tea:#A8C463;
-    --tea-deep:#C9DC8F;
-    --fruit:#F2A15E;
-    --focus:#A8C463;
+    --bg:#141910; --bg-2:#1A2114; --card:#1F2818;
+    --ink:#EEF2E4; --ink-2:#A6B296; --line:#33402A;
+    --tea:#A9C766; --tea-deep:#C9DE95; --tea-soft:#28351C;
+    --nidin:#F0B45A; --nidin-soft:#3A2F17;
+    --focus:#A9C766; --shadow:0 10px 30px rgba(0,0,0,.35);
     color-scheme:dark;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
     background:var(--bg);
+    background-image:
+      radial-gradient(circle at 12% 0%, var(--bg-2) 0, transparent 38%),
+      radial-gradient(circle at 100% 18%, var(--tea-soft) 0, transparent 30%);
+    background-attachment:fixed;
     color:var(--ink);
     font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-    font-size:16px;
-    line-height:1.55;
+    font-size:16px;line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  .page{
-    max-width:480px;
-    margin:0 auto;
-    padding:40px 20px 56px;
-    display:flex;
-    flex-direction:column;
-    gap:28px;
-  }
-  header{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-    text-align:center;
-  }
-  h1{display:flex;justify-content:center;
-    margin:0;
-    font-family:"Noto Serif TC",serif;
-    font-weight:900;
-    font-size:30px;
-    line-height:1.2;
-    letter-spacing:.02em;
-    text-wrap:balance;
-  }
-  h1 small{
-    display:block;
-    font-family:"Noto Sans TC",sans-serif;
-    font-weight:500;font-size:13px;letter-spacing:.18em;
-    color:var(--tea);text-transform:uppercase;
-    margin-bottom:6px;
-  }
-  .logo{width:auto;height:150px;color:var(--tea)}
+  a{color:inherit}
+  .page{max-width:500px;margin:0 auto;padding:36px 18px 48px;display:flex;flex-direction:column;gap:22px}
+
+  header{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:6px 0 2px}
+  h1{margin:0;display:flex;justify-content:center}
+  .logo{width:auto;height:140px;color:var(--tea);filter:drop-shadow(0 6px 12px rgba(74,84,40,.15))}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .tagline{margin:0;color:var(--ink-2);font-size:15px}
+  .motto{
+    margin:0;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--tea);font-weight:500;
+  }
+  .tagline{margin:4px 0 0;color:var(--ink-2);font-size:15px}
+  .nav{display:flex;gap:8px;margin-top:8px}
+  .nav a{
+    text-decoration:none;font-size:13px;font-weight:500;
+    padding:7px 14px;border-radius:999px;
+    background:var(--card);border:1px solid var(--line);color:var(--ink-2);
+  }
+  .nav a:hover{border-color:var(--tea);color:var(--tea)}
 
   .branch{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:20px;
-    display:flex;flex-direction:column;gap:14px;
+    background:var(--card);border:1px solid var(--line);border-radius:24px;
+    padding:22px 20px 18px;display:flex;flex-direction:column;gap:14px;
+    box-shadow:var(--shadow);scroll-margin-top:16px;
   }
-  .branch-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .branch-head{display:flex;flex-direction:column;gap:6px}
   .branch h2{
-    margin:0;
-    font-family:"Noto Serif TC",serif;
-    font-weight:700;font-size:22px;letter-spacing:.03em;
+    margin:0;font-family:"Noto Serif TC",serif;font-weight:900;font-size:24px;letter-spacing:.04em;
+    display:flex;align-items:baseline;gap:10px;
   }
-  .branch .area{
-    font-size:12px;letter-spacing:.12em;color:var(--ink-2);
-    text-transform:uppercase;white-space:nowrap;
-  }
+  .branch h2 .area{font-family:"Noto Sans TC",sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--tea);text-transform:uppercase}
+  .meta{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--ink-2)}
+  .meta a{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .meta a:hover{color:var(--tea)}
+  .meta svg{width:14px;height:14px;flex:none;color:var(--tea)}
+
   .links{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
   .btn{
-    display:flex;align-items:center;gap:14px;
-    padding:14px 16px;
-    border-radius:14px;
-    border:1.5px solid var(--line);
-    background:var(--card);
-    color:var(--ink);
-    text-decoration:none;
-    font-weight:500;
+    display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:16px;
+    border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+    text-decoration:none;font-weight:500;
     transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
   }
-  .btn:hover{transform:translateY(-1px);border-color:var(--tea);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+  .btn:hover{transform:translateY(-1px);border-color:var(--tea);box-shadow:0 6px 16px rgba(74,84,40,.12)}
   .btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
   .btn:active{transform:translateY(0)}
+  .btn.primary{border-color:var(--nidin);background:var(--nidin-soft)}
   .dot{
-    flex:none;width:38px;height:38px;border-radius:11px;
-    display:grid;place-items:center;
+    flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
     color:#fff;font-weight:700;font-size:13px;letter-spacing:.02em;
   }
   .dot.nidin{background:var(--nidin)}
@@ -136,14 +113,30 @@
   .btn .t{display:flex;flex-direction:column;line-height:1.25}
   .btn .t b{font-weight:700;font-size:16px}
   .btn .t span{font-size:12.5px;color:var(--ink-2);margin-top:3px}
-  .btn .arrow{margin-left:auto;color:var(--ink-2);font-size:18px}
-  .btn.primary{border-color:var(--tea);background:color-mix(in srgb,var(--tea) 8%,var(--card))}
+  .btn .arrow{margin-left:auto;color:var(--ink-2);font-size:20px;line-height:1}
 
-  footer{
-    text-align:center;color:var(--ink-2);font-size:12.5px;
-    display:flex;flex-direction:column;gap:4px;
+  details{border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+  summary{
+    cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;
+    font-size:14px;font-weight:700;color:var(--tea-deep);
   }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";margin-left:auto;color:var(--ink-2);font-weight:400}
+  details[open] summary::after{content:"－"}
+  summary .pill{font-size:11px;font-weight:500;color:var(--ink-2);background:var(--bg-2);padding:2px 8px;border-radius:999px}
+  .tiers{
+    display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:12px 0 4px;padding:0;list-style:none;
+    font-variant-numeric:tabular-nums;font-size:13.5px;
+  }
+  .tiers li{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--line)}
+  .tiers b{font-weight:700;color:var(--tea-deep);min-width:5.2em}
+  .tiers span{color:var(--ink-2)}
+  .note{margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+
+  footer{text-align:center;color:var(--ink-2);font-size:12.5px;display:flex;flex-direction:column;gap:4px;padding-top:6px}
   footer b{color:var(--tea-deep);font-weight:700}
+  footer a{text-decoration:none}
+  @media (max-width:380px){.tiers{grid-template-columns:1fr}}
   @media (prefers-reduced-motion: reduce){.btn{transition:none}.btn:hover{transform:none}}
 </style>
 </head>
@@ -160,18 +153,30 @@
 </g>
 <defs><clipPath id="clip0_141_526"><rect width="90.3156" height="110" fill="white"/></clipPath></defs>
 </svg><span class="sr">Mr. WISH 希望好茶</span></h1>
+    <p class="motto">Have a drink, make a wish</p>
     <p class="tagline">選擇門市，用你習慣的方式點一杯</p>
+    <nav class="nav" aria-label="門市">
+      <a href="#shuiyuan">公館水源店</a>
+      <a href="#shilin">士林承德店</a>
+    </nav>
   </header>
 
-  <section class="branch" aria-labelledby="b1">
+  <section class="branch" id="shuiyuan" aria-labelledby="b1">
     <div class="branch-head">
-      <h2 id="b1">公館水源店</h2>
-      <span class="area">Gongguan</span>
+      <h2 id="b1">公館水源店 <span class="area">Gongguan</span></h2>
+      <div class="meta">
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E5%8D%80%E6%80%9D%E6%BA%90%E8%A1%9716%E8%99%9F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          台北市中正區思源街 16 號</a>
+        <a href="tel:0919056052">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          0919-056052</a>
+      </div>
     </div>
     <ul class="links">
       <li><a class="btn primary" href="https://order.nidin.shop/menu/29945" target="_blank" rel="noopener">
         <span class="dot nidin">訂</span>
-        <span class="t"><b>線上點餐・自取</b><span>你訂 NiDin，免排隊直接到店拿</span></span>
+        <span class="t"><b>你訂 線上點餐</b><span>可預約時間取餐或外送</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
       <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/nswh/mr-wishxi-wang-hao-cha-gong-guan-shui-yuan-nswh" target="_blank" rel="noopener">
         <span class="dot panda">fp</span>
@@ -182,17 +187,41 @@
         <span class="t"><b>Uber Eats 外送</b><span>Uber Eats 訂購</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
     </ul>
+    <details>
+      <summary>你訂外送・免運距離 <span class="pill">滿額即可外送</span></summary>
+      <ul class="tiers">
+        <li><b>滿 300 元</b><span>1 公里內</span></li>
+        <li><b>滿 400 元</b><span>1.5 公里內</span></li>
+        <li><b>滿 500 元</b><span>2 公里內</span></li>
+        <li><b>滿 700 元</b><span>2.5 公里內</span></li>
+        <li><b>滿 850 元</b><span>3 公里內</span></li>
+        <li><b>滿 1000 元</b><span>3.5 公里內</span></li>
+        <li><b>滿 1200 元</b><span>4 公里內</span></li>
+        <li><b>滿 1400 元</b><span>4.5 公里內</span></li>
+        <li><b>滿 1600 元</b><span>5 公里內</span></li>
+        <li><b>滿 2000 元</b><span>6 公里內</span></li>
+        <li><b>滿 2500 元</b><span>7 公里內</span></li>
+      </ul>
+      <p class="note">由門市直接外送，訂單滿額即免運；距離以門市為中心計算。</p>
+    </details>
   </section>
 
-  <section class="branch" aria-labelledby="b2">
+  <section class="branch" id="shilin" aria-labelledby="b2">
     <div class="branch-head">
-      <h2 id="b2">士林承德店</h2>
-      <span class="area">Shilin</span>
+      <h2 id="b2">士林承德店 <span class="area">Shilin</span></h2>
+      <div class="meta">
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E6%89%BF%E5%BE%B7%E8%B7%AF%E5%9B%9B%E6%AE%B527%E8%99%9F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          台北市士林區承德路四段 27 號</a>
+        <a href="tel:0228854748">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          02-2885-4748</a>
+      </div>
     </div>
     <ul class="links">
       <li><a class="btn primary" href="https://order.nidin.shop/menu/20907" target="_blank" rel="noopener">
         <span class="dot nidin">訂</span>
-        <span class="t"><b>線上點餐・自取</b><span>你訂 NiDin，免排隊直接到店拿</span></span>
+        <span class="t"><b>你訂 線上點餐</b><span>可預約時間取餐或外送</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
       <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/bi8r/mr-wish-xi-wang-hao-cha-shi-lin-cheng-de-dian-bi8r" target="_blank" rel="noopener">
         <span class="dot panda">fp</span>
@@ -203,11 +232,26 @@
         <span class="t"><b>Uber Eats 外送</b><span>Uber Eats 訂購</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
     </ul>
+    <details>
+      <summary>你訂外送・免運距離 <span class="pill">滿額即可外送</span></summary>
+      <ul class="tiers">
+        <li><b>滿 300 元</b><span>1 公里內</span></li>
+        <li><b>滿 400 元</b><span>1.5 公里內</span></li>
+        <li><b>滿 500 元</b><span>2 公里內</span></li>
+        <li><b>滿 700 元</b><span>2.5 公里內</span></li>
+        <li><b>滿 850 元</b><span>3 公里內</span></li>
+        <li><b>滿 1000 元</b><span>3.5 公里內</span></li>
+        <li><b>滿 1200 元</b><span>4 公里內</span></li>
+        <li><b>滿 1400 元</b><span>4.5 公里內</span></li>
+        <li><b>滿 1600 元</b><span>5 公里內</span></li>
+      </ul>
+      <p class="note">由門市直接外送，訂單滿額即免運；距離以門市為中心計算。</p>
+    </details>
   </section>
 
   <footer>
     <b>Mr. WISH 希望好茶</b>
-    <span>新鮮水果茶，每天現切現泡</span>
+    <span>新鮮水果茶，每天現切現泡・<a href="https://www.mr-wish.com/" target="_blank" rel="noopener">品牌官網</a></span>
   </footer>
 </main>
 </body>
