@@ -136,6 +136,15 @@
   footer{text-align:center;color:var(--ink-2);font-size:12.5px;display:flex;flex-direction:column;gap:4px;padding-top:6px}
   footer b{color:var(--tea-deep);font-weight:700}
   footer a{text-decoration:none}
+  .side{
+    margin:14px auto 0;display:inline-flex;align-items:center;gap:10px;
+    padding:9px 14px 9px 12px;border-radius:999px;
+    border:1px dashed var(--line);color:var(--ink-2);font-size:13px;
+  }
+  .side:hover{border-color:var(--tea);color:var(--tea)}
+  .side-k{font-size:11px;letter-spacing:.08em;padding:2px 7px;border-radius:999px;background:var(--bg-2)}
+  .side-t{font-weight:700;color:var(--ink)}
+  .side .arrow{font-size:16px;line-height:1}
   @media (max-width:380px){.tiers{grid-template-columns:1fr}}
   @media (prefers-reduced-motion: reduce){.btn{transition:none}.btn:hover{transform:none}}
 </style>
@@ -252,6 +261,11 @@
   <footer>
     <b>Mr. WISH 希望好茶</b>
     <span>新鮮水果茶，每天現切現泡・<a href="https://www.mr-wish.com/" target="_blank" rel="noopener">品牌官網</a></span>
+    <a class="side" href="https://tw-stock-signals.mrfrank914.workers.dev/" target="_blank" rel="noopener">
+      <span class="side-k">店長的副業</span>
+      <span class="side-t">台股訊號儀表板</span>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
   </footer>
 </main>
 </body>
