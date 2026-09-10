@@ -145,6 +145,11 @@
   footer{text-align:center;color:var(--ink-2);font-size:12.5px;display:flex;flex-direction:column;gap:4px;padding-top:6px}
   footer b{color:var(--tea-deep);font-weight:700}
   footer a{text-decoration:none}
+  .hits{
+    margin:2px 0 0;font-size:12px;color:var(--ink-2);
+    font-variant-numeric:tabular-nums;letter-spacing:.02em;
+  }
+  .hits b{color:var(--tea);font-weight:700}
   .side{
     margin:14px auto 0;display:inline-flex;align-items:center;gap:10px;
     padding:9px 14px 9px 12px;border-radius:999px;
@@ -190,15 +195,15 @@
       </div>
     </div>
     <ul class="links">
-      <li><a class="btn primary" href="https://order.nidin.shop/menu/29945" target="_blank" rel="noopener">
+      <li><a class="btn primary" href="https://order.nidin.shop/menu/29945" data-k="nidin-shuiyuan" target="_blank" rel="noopener">
         <span class="dot nidin">訂</span>
         <span class="t"><b>你訂 線上點餐</b><span>可預約時間取餐或外送</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
-      <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/nswh/mr-wishxi-wang-hao-cha-gong-guan-shui-yuan-nswh" target="_blank" rel="noopener">
+      <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/nswh/mr-wishxi-wang-hao-cha-gong-guan-shui-yuan-nswh" data-k="panda-shuiyuan" target="_blank" rel="noopener">
         <span class="dot panda">fp</span>
         <span class="t"><b>foodpanda 外送</b><span>熊貓送到你手上</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
-      <li><a class="btn" href="https://www.ubereats.com/tw/store/mrwish%E5%B8%8C%E6%9C%9B%E5%A5%BD%E8%8C%B6-%E5%85%AC%E9%A4%A8%E6%B0%B4%E6%BA%90%E5%BA%97/YtBQQhl6Wm2Qghal_F7KvQ?diningMode=DELIVERY" target="_blank" rel="noopener">
+      <li><a class="btn" href="https://www.ubereats.com/tw/store/mrwish%E5%B8%8C%E6%9C%9B%E5%A5%BD%E8%8C%B6-%E5%85%AC%E9%A4%A8%E6%B0%B4%E6%BA%90%E5%BA%97/YtBQQhl6Wm2Qghal_F7KvQ?diningMode=DELIVERY" data-k="uber-shuiyuan" target="_blank" rel="noopener">
         <span class="dot uber">UE</span>
         <span class="t"><b>Uber Eats 外送</b><span>Uber Eats 訂購</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
@@ -233,15 +238,15 @@
       </div>
     </div>
     <ul class="links">
-      <li><a class="btn primary" href="https://order.nidin.shop/menu/20907" target="_blank" rel="noopener">
+      <li><a class="btn primary" href="https://order.nidin.shop/menu/20907" data-k="nidin-shilin" target="_blank" rel="noopener">
         <span class="dot nidin">訂</span>
         <span class="t"><b>你訂 線上點餐</b><span>可預約時間取餐或外送</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
-      <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/bi8r/mr-wish-xi-wang-hao-cha-shi-lin-cheng-de-dian-bi8r" target="_blank" rel="noopener">
+      <li><a class="btn" href="https://www.foodpanda.com.tw/restaurant/bi8r/mr-wish-xi-wang-hao-cha-shi-lin-cheng-de-dian-bi8r" data-k="panda-shilin" target="_blank" rel="noopener">
         <span class="dot panda">fp</span>
         <span class="t"><b>foodpanda 外送</b><span>熊貓送到你手上</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
-      <li><a class="btn" href="https://www.ubereats.com/tw/store/mrwish-%E5%B8%8C%E6%9C%9B%E5%A5%BD%E8%8C%B6-%E5%A3%AB%E6%9E%97%E6%89%BF%E5%BE%B7%E5%BA%97/kqL58azaVEm4klypMqPAiQ?diningMode=DELIVERY" target="_blank" rel="noopener">
+      <li><a class="btn" href="https://www.ubereats.com/tw/store/mrwish-%E5%B8%8C%E6%9C%9B%E5%A5%BD%E8%8C%B6-%E5%A3%AB%E6%9E%97%E6%89%BF%E5%BE%B7%E5%BA%97/kqL58azaVEm4klypMqPAiQ?diningMode=DELIVERY" data-k="uber-shilin" target="_blank" rel="noopener">
         <span class="dot uber">UE</span>
         <span class="t"><b>Uber Eats 外送</b><span>Uber Eats 訂購</span></span>
         <span class="arrow" aria-hidden="true">›</span></a></li>
@@ -266,6 +271,7 @@
   <footer>
     <b>Mr. WISH 希望好茶</b>
     <span>新鮮水果茶，每天現切現泡・<a href="https://www.mr-wish.com/" target="_blank" rel="noopener">品牌官網</a></span>
+    <p class="hits" hidden><b id="hitn">—</b> 次瀏覽</p>
     <a class="side" href="https://tw-stock-signals.mrfrank914.workers.dev/" target="_blank" rel="noopener">
       <span class="side-k">店長的副業</span>
       <span class="side-t">台股訊號儀表板</span>
@@ -273,6 +279,33 @@
     </a>
   </footer>
 </main>
+
+<script>
+(function () {
+  var el = document.getElementById('hitn');
+  var box = document.querySelector('.hits');
+  var seen = false;
+  try { seen = sessionStorage.getItem('mw_seen') === '1'; } catch (e) {}
+
+  fetch('/api/hits' + (seen ? '?bump=0' : ''), { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || typeof d.views !== 'number') return;
+      el.textContent = d.views.toLocaleString('zh-TW');
+      box.hidden = false;
+      try { sessionStorage.setItem('mw_seen', '1'); } catch (e) {}
+    })
+    .catch(function () {});
+
+  document.querySelectorAll('a[data-k]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var u = '/api/hits?to=' + encodeURIComponent(a.dataset.k);
+      if (navigator.sendBeacon) navigator.sendBeacon(u);
+      else fetch(u, { cache: 'no-store', keepalive: true }).catch(function () {});
+    });
+  });
+})();
+</script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2e67bf23fd1d4f43a897d85187566ae3"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
