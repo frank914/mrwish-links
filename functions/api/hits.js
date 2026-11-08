@@ -16,6 +16,15 @@ async function num(kv, key) {
   return Number.isFinite(n) ? n : 0;
 }
 
+// 粗略過濾爬蟲／監控程式，避免灌水計數
+const BOT = /bot|crawler|spider|crawling|slurp|headless|preview|monitor|scanner|curl|wget|python-requests|axios|facebookexternalhit|whatsapp|telegram|lighthouse|pingdom|uptime|semrush|ahrefs|bingpreview|phantom|puppeteer|playwright/i;
+
+function isBot(request) {
+  const ua = request.headers.get('user-agent') || '';
+  if (!ua) return true;
+  return BOT.test(ua);
+}
+
 export async function onRequestGet({ request, env }) {
   const kv = env.COUNTER;
   if (!kv) {
@@ -32,14 +41,17 @@ export async function onRequestGet({ request, env }) {
     if (!KEYS.includes(to)) {
       return new Response(JSON.stringify({ ok: false }), { status: 400, headers: HEADERS });
     }
+    if (isBot(request)) {
+      return new Response(JSON.stringify({ ok: true, skipped: true }), { headers: HEADERS });
+    }
     const key = 'click:' + to;
     await kv.put(key, String((await num(kv, key)) + 1));
     return new Response(JSON.stringify({ ok: true }), { headers: HEADERS });
   }
 
-  // 瀏覽次數：bump=0 只讀不加（同一個瀏覽階段重整不重複計算）
+  // 瀏覽次數：bump=0 只讀不加（同一個瀏覽階段重整不重複計算）；機器人不計
   let views = await num(kv, 'views');
-  if (url.searchParams.get('bump') !== '0') {
+  if (url.searchParams.get('bump') !== '0' && !isBot(request)) {
     views += 1;
     await kv.put('views', String(views));
   }
