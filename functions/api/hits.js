@@ -1,7 +1,8 @@
 const KEYS = [
   'nidin-shuiyuan', 'panda-shuiyuan', 'uber-shuiyuan',
   'nidin-shilin', 'panda-shilin', 'uber-shilin',
-  'line-shuiyuan', 'line-shilin'
+  'line-shuiyuan', 'line-shilin',
+  'own-shuiyuan'
 ];
 
 const HEADERS = {
